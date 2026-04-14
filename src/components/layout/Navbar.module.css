@@ -86,18 +86,109 @@
   color: var(--color-danger);
 }
 
+.hamburger {
+  display: none;
+}
+
+.menuWrapper {
+  display: contents;
+}
+
 @media (max-width: 768px) {
   .nav {
+    display: flex;
+    justify-content: space-between;
     padding: 0 var(--space-4);
   }
 
-  .center {
-    gap: var(--space-4);
+  .left {
+    max-width: 200px;
+    flex-shrink: 1;
   }
 
-  .link,
-  .logout {
-    font-size: 11px;
+  .left .link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 24px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 101;
+  }
+
+  .hamburgerBar {
+    width: 100%;
+    height: 2px;
+    background: var(--color-accent-gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburgerOpen .hamburgerBar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburgerOpen .hamburgerBar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburgerOpen .hamburgerBar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .menuWrapper {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(28, 18, 10, 0.98) 0%, rgba(20, 12, 6, 0.95) 100%);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(196, 154, 42, 0.20);
+    padding: var(--space-6) var(--space-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--transition-base), opacity var(--transition-base);
+    z-index: -1;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  }
+
+  .menuOpen {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .center {
+    flex-direction: column;
+    gap: var(--space-5);
+    margin: 0;
+  }
+  
+  .right {
+    width: 100%;
+    justify-content: center;
+    border-top: 1px solid rgba(196, 154, 42, 0.15);
+    padding-top: var(--space-6);
+  }
+
+  .link, .logout {
+    font-size: 15px;
   }
 }
 

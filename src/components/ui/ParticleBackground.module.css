@@ -1,0 +1,24 @@
+.container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  animation: particle-float linear infinite;
+}
+
+.particle:nth-child(even) {
+  background: var(--color-accent-purple);
+  animation-name: particle-drift;
+}
+
+.particle:nth-child(3n) {
+  background: #fff;
+}

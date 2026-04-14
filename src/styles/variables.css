@@ -1,0 +1,173 @@
+:root {
+  /* ================= GOLD (Luminous / Warm / Reflective) ================= */
+  --gold-royal: #D4AF37;
+  --gold-antique: #C49A2A;
+  --gold-brass: #B8860B;
+  --gold-pale: #F0D080;
+  --gold-bronze: #9A6B20;
+  --gold-bright: #FFD700;
+  --gold-glow: rgba(255, 215, 0, 0.35);
+  --gold-shine: linear-gradient(135deg, #FFD700 0%, #F5C842 40%, #E8B830 60%, #FFE066 100%);
+  --gold-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.15) 50%, transparent 100%);
+
+  /* ================= SILVER (Moonlit / Reflective / Ethereal) ================= */
+  --silver-classic: #D0D0D0;
+  --silver-dull: #B0B0B0;
+  --silver-iron: #808080;
+  --silver-moonlight: #ECE9E6;
+  --silver-steel: #C8CACC;
+  --silver-pewter: #6A6A6A;
+  --silver-glow: rgba(220, 220, 220, 0.25);
+  --silver-shine: linear-gradient(135deg, #E8E8E8 0%, #D4D4D4 40%, #C0C0C0 60%, #F0F0F0 100%);
+
+  /* ================= WOOD (Deep / Rich / Enchanted) ================= */
+  --wood-ebony: #2E1F14;
+  --wood-mahogany: #42291A;
+  --wood-oak: #5A3A24;
+  --wood-walnut: #4A3028;
+  --wood-burned: #1C120A;
+  --wood-cedar: #8B5438;
+  --wood-shelf: #6B4226;
+  --wood-panel: rgba(90, 58, 36, 0.35);
+
+  /* ================= PAPER / PARCHMENT (Warm / Soft / Aged) ================= */
+  --beige-vellum: #F5ECD7;
+  --beige-antique: #FAEBD7;
+  --beige-sandstone: #D2B48C;
+  --beige-dusty: #E8DCC8;
+  --beige-paper: #F2E0C8;
+  --beige-desert: #EDC9AF;
+  --paper-warm: #F8F0E0;
+  --paper-cream: #FDF6E8;
+  --paper-shadow: rgba(120, 70, 30, 0.12);
+  --paper-inner-glow: rgba(180, 130, 60, 0.06);
+
+  /* --- BOOKS GENRES --- */
+  --color-lich-su: #b91c1c;
+  --color-trinh-tham: #6d0b0b;
+  --color-khac: #ff3131;
+  --color-khoa-hoc: #023e8a;
+  --color-van-hoc: #536dfe;
+  --color-truyen-tranh: #00f5d4;
+  --color-kinh-te: #064e3b;
+  --color-phat-trien: #10b981;
+  --color-hai-huoc: #adff2f;
+  --color-tam-ly: #8338ec;
+  --color-gia-tuong: #ff70ff;
+  --color-triet-hoc: #3c096c;
+
+  /* ================= STATE ================= */
+  --hover-light: rgba(255, 255, 255, 0.12);
+  --hover-dark: rgba(0, 0, 0, 0.20);
+  --shadow-soft: rgba(0, 0, 0, 0.25);
+  --shadow-strong: rgba(0, 0, 0, 0.5);
+
+  /* ================= WARM LIGHTING ================= */
+  --warm-light: rgba(255, 200, 100, 0.04);
+  --warm-ambient: rgba(255, 180, 80, 0.06);
+  --candle-glow: rgba(255, 170, 60, 0.08);
+  --lantern-haze: radial-gradient(ellipse at 50% 0%, rgba(255, 190, 80, 0.07) 0%, transparent 65%);
+
+  /* ================= SEMANTIC MAPPING ================= */
+  --color-text-primary: var(--beige-antique);
+  --color-text-secondary: var(--beige-vellum);
+  --color-text-muted: var(--beige-sandstone);
+  --color-text-dark: var(--wood-burned);
+  --color-text-paper-muted: var(--wood-oak);
+
+  --color-bg-main: var(--wood-ebony);
+  --color-bg-card: var(--wood-walnut);
+  --color-bg-deep: var(--wood-burned);
+  --color-bg-surface: var(--wood-mahogany);
+  --color-bg-elevated: var(--wood-oak);
+  --color-bg-paper: var(--paper-warm);
+  --color-bg-paper-dark: var(--beige-paper);
+  --color-bg-paper-cream: var(--paper-cream);
+
+  --color-border: var(--gold-antique);
+  --color-border-subtle: var(--wood-oak);
+  --color-border-glow: var(--gold-bright);
+  --color-border-silver: var(--silver-iron);
+
+  --color-accent-primary: var(--gold-royal);
+  --color-accent-danger: var(--color-lich-su);
+
+  --color-accent-gold: var(--gold-royal);
+  --color-accent-gold-dim: var(--gold-antique);
+  
+  --color-accent-silver: var(--silver-classic);
+  --color-accent-silver-dim: var(--silver-dull);
+
+  --color-accent-purple: var(--color-van-hoc);
+  --color-accent-purple-dim: rgba(83, 109, 254, 0.4);
+
+  --color-accent-blue: var(--color-khoa-hoc);
+
+  --color-star-filled: var(--gold-bright);
+  --color-star-empty: var(--silver-pewter);
+
+  --color-danger: var(--color-lich-su);
+
+  /* Typography */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Source Serif 4', serif;
+  --font-ui: 'Be Vietnam Pro', sans-serif;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Border radius — replaced with sharp squares for analog paper look */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Music player height */
+  --player-height: 72px;
+
+  /* ================= VISUAL TACTILE PAPER & WOOD EFFECTS ================= */
+  --paper-fold: linear-gradient(180deg, transparent 48%, rgba(0,0,0,0.03) 49%, rgba(255,255,255,0.06) 50%, rgba(0,0,0,0.03) 51%, transparent 52%);
+  --paper-crease-x: linear-gradient(90deg, transparent 35%, rgba(0,0,0,0.03) 36%, rgba(255,255,255,0.06) 37%, transparent 38%);
+  --paper-crease-y: linear-gradient(180deg, transparent 75%, rgba(0,0,0,0.02) 76%, rgba(255,255,255,0.05) 77%, transparent 78%);
+  
+  /* Complex polygon clip-paths simulating torn edges and cut corners */
+  --paper-tear-1: polygon(
+    1% 1%, 4% 0%, 15% 1%, 20% 0%, 40% 1%, 85% 0%, 96% 1%, 99% 3%, 
+    100% 10%, 99% 25%, 100% 40%, 99% 80%, 100% 95%, 97% 99%, 80% 100%, 75% 99%, 40% 100%, 
+    20% 99%, 10% 100%, 2% 98%, 0% 90%, 1% 70%, 0% 30%, 1% 15%
+  );
+  --paper-tear-2: polygon(
+    0% 4%, 2% 1%, 10% 0%, 12% 2%, 30% 0%, 70% 1%, 90% 0%, 98% 2%, 100% 5%,
+    99% 15%, 100% 30%, 98% 70%, 100% 85%, 98% 98%, 85% 100%, 70% 98%, 40% 100%, 
+    15% 99%, 5% 100%, 1% 95%, 0% 80%, 1% 50%, 0% 20%
+  );
+  --paper-tear-3: polygon(
+    2% 0%, 10% 1%, 25% 0%, 50% 1%, 80% 0%, 95% 1%, 100% 4%, 
+    98% 20%, 100% 45%, 99% 60%, 100% 90%, 96% 100%, 80% 99%, 60% 100%, 30% 98%, 
+    10% 100%, 0% 96%, 1% 75%, 0% 40%, 1% 10%
+  );
+  --paper-tear-4: polygon(
+    1% 2%, 15% 0%, 30% 1%, 50% 0%, 75% 1%, 98% 0%, 100% 6%, 
+    99% 30%, 100% 60%, 98% 85%, 100% 98%, 70% 100%, 50% 99%, 20% 100%, 
+    2% 99%, 0% 80%, 1% 50%, 0% 20%
+  );
+  --paper-tear-5: polygon(
+    0% 5%, 5% 1%, 15% 0%, 25% 1%, 60% 0%, 85% 1%, 95% 0%, 99% 5%, 
+    100% 20%, 99% 40%, 100% 70%, 98% 90%, 100% 96%, 95% 99%, 80% 100%, 50% 99%, 30% 100%, 
+    10% 99%, 0% 94%, 1% 80%, 0% 50%, 1% 25%
+  );
+}

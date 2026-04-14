@@ -1,0 +1,36 @@
+.grid {
+  column-count: 3;
+  column-gap: var(--space-6);
+}
+
+.grid > * {
+  break-inside: avoid-column;
+  page-break-inside: avoid;
+  display: block;
+  margin-bottom: var(--space-6);
+}
+
+.empty {
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  color: var(--color-text-secondary);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-style: italic;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    column-count: 1;
+    column-gap: var(--space-4);
+  }
+  .grid > * {
+    margin-bottom: var(--space-4);
+  }
+}

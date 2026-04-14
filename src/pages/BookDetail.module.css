@@ -1,0 +1,213 @@
+.page {
+  min-height: 100vh;
+  padding: var(--space-10) var(--space-8);
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.loading {
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+}
+
+/* Book header */
+.bookHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.genre {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--silver-classic);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 10px;
+  border-radius: 0;
+  align-self: flex-start;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 5vw, 42px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.ratingText {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+}
+
+.addedBy {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  border-left: 2px solid rgba(196, 154, 42, 0.35);
+  padding-left: var(--space-5);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Review section */
+.reviewSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.reviewTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.editBtn {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-accent-gold);
+  background: rgba(212, 168, 67, 0.06);
+  border: 1px solid rgba(196, 154, 42, 0.25);
+  border-radius: 0;
+  padding: 5px 14px;
+  cursor: pointer;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.editBtn:hover {
+  background: rgba(212, 168, 67, 0.12);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.06);
+}
+
+.ownerNote {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.formWrapper {
+  animation: fade-in-up 0.3s ease both;
+}
+
+.noReviews {
+  font-family: var(--font-body);
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: 16px;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.reviewItem {
+  background:
+    var(--paper-crease-y),
+    var(--paper-fold),
+    radial-gradient(ellipse at 30% 20%, var(--paper-inner-glow) 0%, transparent 60%),
+    linear-gradient(170deg, var(--paper-warm) 0%, var(--paper-cream) 40%, var(--beige-dusty) 100%);
+  clip-path: var(--paper-tear-3);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  filter: drop-shadow(0 4px 12px rgba(83, 56, 30, 0.12));
+}
+
+.reviewItem.mine {
+  background:
+    var(--paper-crease-y),
+    var(--paper-fold),
+    radial-gradient(ellipse at 30% 20%, rgba(212, 168, 67, 0.1) 0%, transparent 60%),
+    linear-gradient(170deg, var(--beige-vellum) 0%, var(--beige-paper) 100%);
+}
+
+.reviewTop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  justify-content: space-between;
+}
+
+.reviewer {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: black;
+}
+
+.comment {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--shadow-strong);
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+.backBtn {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: black;
+  background: var(--silver-classic);
+  border: 1px solid rgba(196, 154, 42, 0.25);
+  border-radius: 0;
+  padding: 5px 14px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color var(--transition-fast);
+}
+
+.backBtn:hover {
+  color: var(--silver-iron);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .description {
+    font-size: 16px;
+  }
+}

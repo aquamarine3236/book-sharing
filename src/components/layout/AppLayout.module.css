@@ -1,0 +1,11 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  margin-top: 60px;
+  padding-bottom: var(--player-height);
+  flex: 1;
+}

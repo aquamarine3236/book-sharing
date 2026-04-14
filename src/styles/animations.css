@@ -1,0 +1,115 @@
+/* Particle float */
+@keyframes particle-float {
+  0%   { transform: translateY(100vh) translateX(0)   scale(0);   opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-10vh) translateX(30px) scale(1.2); opacity: 0; }
+}
+
+@keyframes particle-drift {
+  0%   { transform: translateY(100vh) translateX(0)   scale(0);   opacity: 0; }
+  10%  { opacity: 0.8; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(-10vh) translateX(-20px) scale(1); opacity: 0; }
+}
+
+/* Fade in up */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade in */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Loading pulse */
+@keyframes loading-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.95); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+
+/* Shimmer — for gold/silver reflective surfaces */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Gold glow pulse — luminous, warm */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 215, 0, 0.15), 0 0 20px rgba(212, 175, 55, 0.08); }
+  50%       { box-shadow: 0 0 16px rgba(255, 215, 0, 0.30), 0 0 40px rgba(212, 175, 55, 0.15); }
+}
+
+/* Silver glow pulse */
+@keyframes silver-glow-pulse {
+  0%, 100% { box-shadow: 0 0 6px rgba(208, 208, 208, 0.10), 0 0 15px rgba(200, 200, 200, 0.06); }
+  50%       { box-shadow: 0 0 12px rgba(208, 208, 208, 0.22), 0 0 30px rgba(200, 200, 200, 0.10); }
+}
+
+/* Candlelight flicker — subtle warm ambience */
+@keyframes candle-flicker {
+  0%, 100% { opacity: 0.85; filter: brightness(1); }
+  25%      { opacity: 0.92; filter: brightness(1.03); }
+  50%      { opacity: 0.88; filter: brightness(0.98); }
+  75%      { opacity: 0.95; filter: brightness(1.02); }
+}
+
+/* Gold shimmer sweep — for decorative borders */
+@keyframes gold-shimmer-sweep {
+  0%   { background-position: -100% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Star pop */
+@keyframes star-pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* Slide in from bottom */
+@keyframes slide-in-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Spin */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Utility animation classes */
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,134 @@
+.form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  background:
+    var(--paper-crease-x),
+    var(--paper-crease-y),
+    var(--paper-fold),
+    radial-gradient(ellipse at 25% 15%, var(--paper-inner-glow) 0%, transparent 50%),
+    linear-gradient(175deg, var(--paper-cream) 0%, var(--paper-warm) 50%, var(--beige-dusty) 100%);
+  clip-path: var(--paper-tear-4);
+  padding: var(--space-6);
+  filter: drop-shadow(0 16px 40px rgba(60, 40, 20, 0.20));
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--color-text-dark);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-dark);
+}
+
+.fileInput {
+  background: var(--beige-dusty);
+  border: 1px dashed rgba(180, 140, 80, 0.35);
+  border-radius: 0;
+  padding: var(--space-3);
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--color-text-dark);
+}
+
+.fileInput::-webkit-file-upload-button {
+  background: var(--beige-vellum);
+  color: var(--gold-brass);
+  border: 1px solid rgba(180, 140, 80, 0.3);
+  border-radius: 0;
+  padding: 4px 10px;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.fileName {
+  font-size: 12px;
+  color: var(--color-text-paper-muted);
+  font-family: var(--font-ui);
+}
+
+.preview {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 1px solid rgba(180, 140, 80, 0.25);
+}
+
+.progressWrapper {
+  position: relative;
+  height: 6px;
+  background: var(--beige-dusty);
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  background: var(--gold-shine);
+  background-size: 200% 100%;
+  border-radius: 0;
+  transition: width 0.2s ease;
+}
+
+.progressText {
+  position: absolute;
+  right: 0;
+  top: -18px;
+  font-size: 11px;
+  color: var(--color-text-paper-muted);
+  font-family: var(--font-ui);
+}
+
+.error {
+  font-size: 13px;
+  color: var(--color-danger);
+  font-family: var(--font-ui);
+}
+
+.btn {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-bg-deep);
+  background: var(--gold-shine);
+  background-size: 200% 100%;
+  border: none;
+  border-radius: 0;
+  padding: var(--space-3) var(--space-8);
+  cursor: pointer;
+  transition: opacity var(--transition-fast), box-shadow var(--transition-fast);
+  align-self: flex-start;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.18);
+}
+
+.btn:hover:not(:disabled) {
+  opacity: 0.90;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+}
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+@media (max-width: 768px) {
+  .row { grid-template-columns: 1fr; }
+}

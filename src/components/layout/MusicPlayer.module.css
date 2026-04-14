@@ -1,0 +1,219 @@
+.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--player-height);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: 0 var(--space-6);
+  background:
+    linear-gradient(0deg, rgba(14, 10, 6, 0.97) 0%, rgba(20, 14, 8, 0.94) 100%);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(196, 154, 42, 0.18);
+  z-index: 200;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.20);
+}
+
+.idle {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-muted);
+  margin: 0 auto;
+  letter-spacing: 0.04em;
+}
+
+.cover {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 1px solid rgba(196, 154, 42, 0.15);
+}
+
+.coverImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coverPlaceholder {
+  width: 100%;
+  height: 100%;
+  background: var(--color-bg-elevated);
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(196, 154, 42, 0.18);
+  flex-shrink: 0;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.navBtn {
+  font-size: 18px;
+  color: var(--color-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+  line-height: 1;
+}
+
+.navBtn:hover {
+  color: var(--color-accent-gold);
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
+}
+
+.playBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 1.5px solid rgba(196, 154, 42, 0.35);
+  background: rgba(212, 168, 67, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.playBtn:hover {
+  background: rgba(212, 168, 67, 0.14);
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.12);
+}
+
+/* Triangle play icon using CSS border trick */
+.playIcon {
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid var(--color-accent-gold);
+  margin-left: 2px;
+}
+
+/* Square stop icon */
+.stopIcon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background: var(--color-accent-gold);
+}
+
+.progressWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 80px;
+}
+
+.progressBar {
+  width: 100%;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.progressBar::-webkit-slider-runnable-track {
+  background: linear-gradient(to right,
+      var(--color-accent-gold) var(--progress, 0%),
+      var(--color-border) var(--progress, 0%)) !important;
+}
+
+.times {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+}
+
+.volumeWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.volumeLabel {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  font-family: var(--font-ui);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.volumeBar {
+  flex: 1;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.volumeBar::-webkit-slider-runnable-track {
+  background: linear-gradient(to right,
+      var(--color-accent-gold-dim) var(--progress, 70%),
+      var(--color-border) var(--progress, 70%)) !important;
+}
+
+@media (max-width: 768px) {
+  .bar {
+    padding: 0 var(--space-3);
+    gap: var(--space-2);
+  }
+
+  .info {
+    width: 100px;
+  }
+
+  .volumeWrapper {
+    display: none;
+  }
+
+  .progressWrapper {
+    min-width: 60px;
+  }
+}

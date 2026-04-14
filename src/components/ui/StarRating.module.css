@@ -1,0 +1,29 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.readOnly {
+  pointer-events: none;
+}
+
+.star {
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.star:hover {
+  transform: scale(1.2);
+}
+
+.filled {
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.45)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.20));
+}
+
+.label {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  margin-left: 4px;
+}

@@ -59,7 +59,8 @@ export default function MusicManager() {
         const coverPath = deleteTarget.cover_url.split('/storage/v1/object/public/covers/')[1];
         if (coverPath) await supabase.storage.from('covers').remove([coverPath]);
       }
-      await supabase.from('music').delete().eq('id', deleteTarget.id);
+      const { error: deleteError } = await supabase.from('music').delete().eq('id', deleteTarget.id);
+      if (deleteError) throw deleteError;
     } catch (err) {
       console.error('Xóa thất bại:', err);
     } finally {
@@ -95,11 +96,13 @@ export default function MusicManager() {
         newCoverUrl = data.publicUrl;
       }
 
-      await supabase.from('music').update({
+      const { error: updateError } = await supabase.from('music').update({
         title: editTitle.trim(),
         artist: editArtist.trim(),
         cover_url: newCoverUrl,
       }).eq('id', editTarget.id);
+      
+      if (updateError) throw updateError;
 
     } catch (err) {
       console.error('Lỗi khi cập nhật:', err);

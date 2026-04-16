@@ -189,51 +189,6 @@
   transform: translateY(-1px);
 }
 
-/* Edit form */
-.editForm {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.editActions {
-  display: flex;
-  gap: var(--space-2);
-  justify-content: flex-end;
-}
-
-.genreGrid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.genrePill {
-  font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 600;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-lg);
-  border: 1.5px solid rgba(255, 197, 211, 0.40);
-  background: transparent;
-  color: var(--color-text-dark);
-  cursor: pointer;
-  transition: all var(--transition-fast);
-}
-
-.genrePill:hover {
-  border-color: var(--pink-medium);
-  background: rgba(255, 157, 203, 0.06);
-}
-
-.genrePill.active {
-  background: var(--pink-medium);
-  color: #fff;
-  border-color: var(--pink-medium);
-  box-shadow: 0 2px 10px rgba(255, 157, 203, 0.25);
-}
-
 /* Reviews */
 .reviewItem {
   background: var(--paper-rule-lines), var(--paper-cream);
@@ -263,51 +218,6 @@
   font-size: 15px;
   line-height: 1.7;
   color: var(--color-text-primary);
-}
-
-/* Modal */
-.modalOverlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 240, 245, 0.70);
-  backdrop-filter: blur(8px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 500;
-  padding: var(--space-4);
-}
-
-.modal {
-  background: var(--paper-rule-lines), var(--paper-cream);
-  clip-path: var(--paper-tear-2);
-  padding: var(--space-8);
-  max-width: 420px;
-  width: 100%;
-  animation: fade-in-up 0.25s ease both;
-  filter: drop-shadow(0 4px 20px rgba(200, 160, 180, 0.22));
-  border: 1px solid rgba(255, 210, 225, 0.35);
-}
-
-.modalTitle {
-  font-family: var(--font-display);
-  font-size: 20px;
-  color: var(--color-text-dark);
-  margin-bottom: var(--space-4);
-}
-
-.modalText {
-  font-family: var(--font-body);
-  font-size: 15px;
-  color: var(--color-text-primary);
-  line-height: 1.6;
-  margin-bottom: var(--space-6);
-}
-
-.modalActions {
-  display: flex;
-  gap: var(--space-3);
-  justify-content: flex-end;
 }
 
 @media (max-width: 768px) {

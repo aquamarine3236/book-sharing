@@ -139,6 +139,38 @@
   transform: translateY(-1px);
 }
 
+.fileInput {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  color: var(--color-text-primary);
+}
+
+.fileInput::file-selector-button {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--bg-lightest);
+  border: 1.5px solid var(--color-border);
+  color: var(--color-text-dark);
+  cursor: pointer;
+  margin-right: var(--space-3);
+  transition: all var(--transition-fast);
+}
+
+.fileInput::file-selector-button:hover {
+  border-color: var(--pink-medium);
+  color: var(--pink-medium);
+}
+
+.fileName {
+  margin-top: var(--space-2);
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .page {
     padding: var(--space-6) var(--space-4);

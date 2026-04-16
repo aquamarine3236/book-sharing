@@ -5,21 +5,26 @@ import { useAuth } from '../contexts/AuthContext';
 import StarRating from '../components/ui/StarRating';
 import ReviewForm from '../components/books/ReviewForm';
 import FadeInSection from '../components/ui/FadeInSection';
+import EditBookModal from '../components/books/EditBookModal';
+import DeleteBookModal from '../components/books/DeleteBookModal';
 import styles from './BookDetail.module.css';
 
 export default function BookDetail() {
-  const { id }   = useParams();
+  const { id } = useParams();
   const { user, getDisplayName } = useAuth();
   const navigate = useNavigate();
 
-  const [book,       setBook]       = useState(null);
-  const [reviews,    setReviews]    = useState([]);
-  const [loading,    setLoading]    = useState(true);
+  const [book, setBook] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [submitting, setSubmitting] = useState(false);
-  const [showForm,   setShowForm]   = useState(false);
+  const [showForm, setShowForm] = useState(false);
+
+  const [editingBook, setEditingBook] = useState(false);
+  const [deletingBook, setDeletingBook] = useState(false);
 
   const myReview = reviews.find((r) => r.user_id === user?.id);
-  const isOwner  = book?.user_id === user?.id;
+  const isOwner = book?.user_id === user?.id;
 
   useEffect(() => {
     const loadBook = async () => {
@@ -49,17 +54,26 @@ export default function BookDetail() {
     return () => supabase.removeChannel(channel);
   }, [id]);
 
+  const handleEditSuccess = (updatedBook) => {
+    setBook(updatedBook);
+    setEditingBook(false);
+  };
+
+  const handleDeleteSuccess = () => {
+    navigate('/');
+  };
+
   const handleReview = async ({ rating, comment }) => {
     setSubmitting(true);
     try {
       // Upsert review (unique constraint on book_id + user_id)
       const { error: revErr } = await supabase.from('reviews').upsert({
-        book_id:      id,
-        user_id:      user.id,
+        book_id: id,
+        user_id: user.id,
         display_name: getDisplayName(),
         rating,
         comment,
-        updated_at:   new Date().toISOString(),
+        updated_at: new Date().toISOString(),
         ...(myReview ? {} : { created_at: new Date().toISOString() }),
       }, { onConflict: 'book_id,user_id' });
 
@@ -72,10 +86,10 @@ export default function BookDetail() {
         .eq('book_id', id);
 
       const ratings = allReviews.map((r) => r.rating);
-      const avg     = ratings.reduce((a, b) => a + b, 0) / ratings.length;
+      const avg = ratings.reduce((a, b) => a + b, 0) / ratings.length;
 
       await supabase.from('books').update({
-        avg_rating:   Math.round(avg * 10) / 10,
+        avg_rating: Math.round(avg * 10) / 10,
         review_count: ratings.length,
       }).eq('id', id);
 
@@ -87,7 +101,7 @@ export default function BookDetail() {
   };
 
   if (loading) return <div className={styles.loading}>Đang tải...</div>;
-  if (!book)   return <div className={styles.loading}>Không tìm thấy sách.</div>;
+  if (!book) return <div className={styles.loading}>Không tìm thấy sách.</div>;
 
   return (
     <div className={styles.page}>
@@ -105,6 +119,23 @@ export default function BookDetail() {
             </div>
             <p className={styles.addedBy}>Thêm bởi {book.display_name}</p>
             <p className={styles.description}>{book.description}</p>
+            {book.file_url && (
+              <div className={styles.fileActions}>
+                <a href={book.file_url} target="_blank" rel="noopener noreferrer" className={styles.readBookBtn}>
+                  Truy cập sách
+                </a>
+              </div>
+            )}
+            {isOwner && (
+              <div className={styles.ownerActions}>
+                <button className={styles.editBookBtn} onClick={() => setEditingBook(true)}>
+                  Sửa sách
+                </button>
+                <button className={styles.deleteBookBtn} onClick={() => setDeletingBook(true)}>
+                  Xóa sách
+                </button>
+              </div>
+            )}
           </div>
         </FadeInSection>
 
@@ -154,6 +185,19 @@ export default function BookDetail() {
           Quay lại
         </button>
       </div>
+
+      <EditBookModal 
+        book={book} 
+        isOpen={editingBook} 
+        onClose={() => setEditingBook(false)}
+        onSuccess={handleEditSuccess}
+      />
+      <DeleteBookModal 
+        book={book}
+        isOpen={deletingBook}
+        onClose={() => setDeletingBook(false)}
+        onSuccess={handleDeleteSuccess}
+      />
     </div>
   );
 }

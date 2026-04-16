@@ -9,38 +9,64 @@ const GENRE_OPTIONS = GENRES;
 
 export default function NewBook() {
   const { user, getDisplayName } = useAuth();
-  const navigate  = useNavigate();
-  const [title,         setTitle]         = useState('');
-  const [genres,        setGenres]        = useState([]);
-  const [customGenre,   setCustomGenre]   = useState('');
-  const [desc,    setDesc]    = useState('');
+  const navigate = useNavigate();
+  const [title, setTitle] = useState('');
+  const [genres, setGenres] = useState([]);
+  const [customGenre, setCustomGenre] = useState('');
+  const [desc, setDesc] = useState('');
+  const [bookFile, setBookFile] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error,   setError]   = useState('');
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title.trim()) { setError('Vui lòng nhập tên sách.'); return; }
-    
+
     let finalGenres = genres.filter(g => g !== 'Khác');
     if (genres.includes('Khác') && customGenre.trim()) {
-       finalGenres.push(customGenre.trim());
+      finalGenres.push(customGenre.trim());
     }
     if (finalGenres.length === 0) { setError('Vui lòng chọn ít nhất một thể loại.'); return; }
-    
-    if (!desc.trim())  { setError('Vui lòng nhập nội dung mô tả.'); return; }
+
+    if (!desc.trim()) { setError('Vui lòng nhập nội dung mô tả.'); return; }
 
     setLoading(true);
     setError('');
     try {
+      let file_url = '';
+      let file_name = '';
+
+      if (bookFile) {
+        const ts = Date.now();
+        const uid = user.id;
+        const sanitizeFileName = (name) => {
+          return name
+            .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-zA-Z0-9.\-_]/g, '_')
+            .toLowerCase();
+        };
+        const safeFileName = sanitizeFileName(bookFile.name);
+        const path = `${uid}/${ts}_${safeFileName}`;
+
+        const { error: uploadError } = await supabase.storage.from('books').upload(path, bookFile, { upsert: true });
+        if (uploadError) throw uploadError;
+
+        const { data: urlData } = supabase.storage.from('books').getPublicUrl(path);
+        file_url = urlData.publicUrl;
+        file_name = bookFile.name;
+      }
+
       const { data, error: err } = await supabase
         .from('books')
         .insert({
-          title:        title.trim(),
-          genre:        finalGenres.join(', '),
-          description:  desc.trim(),
-          user_id:      user.id,
+          title: title.trim(),
+          genre: finalGenres.join(', '),
+          description: desc.trim(),
+          file_url,
+          file_name,
+          user_id: user.id,
           display_name: getDisplayName(),
-          avg_rating:   0,
+          avg_rating: 0,
           review_count: 0,
         })
         .select()
@@ -104,6 +130,17 @@ export default function NewBook() {
               onChange={(e) => setDesc(e.target.value)}
               placeholder="Nội dung, cảm nhận, lý do bạn muốn chia sẻ cuốn sách này..."
             />
+          </div>
+
+          <div className={styles.field}>
+            <label className={styles.label}>Đính kèm sách (Tuỳ chọn)</label>
+            <input
+              type="file"
+              accept=".pdf,.doc,.docx,.epub,.mobi"
+              onChange={(e) => setBookFile(e.target.files[0])}
+              className={styles.fileInput}
+            />
+            {bookFile && <span className={styles.fileName}>{bookFile.name}</span>}
           </div>
 
           {error && <p className={styles.error}>{error}</p>}

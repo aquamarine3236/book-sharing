@@ -34,6 +34,8 @@ create table if not exists public.books (
   title        text        not null,
   genre        text        not null,
   description  text        not null default '',
+  file_url     text        not null default '',
+  file_name    text        not null default '',
   user_id      uuid        not null references auth.users(id) on delete cascade,
   display_name text        not null default '',
   avg_rating   numeric(3,1) not null default 0,
@@ -129,6 +131,10 @@ create policy "Authenticated users can upload music"
 
 create policy "Uploaders can delete own tracks"
   on public.music for delete
+  using (auth.uid() = uploaded_by);
+
+create policy "Uploaders can update own tracks"
+  on public.music for update
   using (auth.uid() = uploaded_by);
 
 create index if not exists music_uploaded_at_idx on public.music(uploaded_at desc);

@@ -18,7 +18,7 @@
 }
 
 .filled {
-  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.45)) drop-shadow(0 0 12px rgba(212, 175, 55, 0.20));
+  filter: drop-shadow(0 0 6px rgba(255, 179, 198, 0.50)) drop-shadow(0 0 12px rgba(255, 157, 203, 0.25));
 }
 
 .label {

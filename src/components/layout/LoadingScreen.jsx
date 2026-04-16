@@ -8,7 +8,7 @@ export default function LoadingScreen() {
           <polygon
             points="30,5 36,22 54,22 40,33 45,50 30,39 15,50 20,33 6,22 24,22"
             fill="none"
-            stroke="var(--color-accent-gold)"
+            stroke="var(--pink-medium)"
             strokeWidth="1.5"
             className={styles.star}
           />

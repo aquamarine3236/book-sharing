@@ -10,15 +10,19 @@
   position: absolute;
   bottom: -10px;
   border-radius: 50%;
-  background: var(--color-accent-gold);
+  background: var(--pink-soft);
   animation: particle-float linear infinite;
 }
 
 .particle:nth-child(even) {
-  background: var(--color-accent-purple);
+  background: var(--pastel-lavender);
   animation-name: particle-drift;
 }
 
 .particle:nth-child(3n) {
+  background: var(--mint-light);
+}
+
+.particle:nth-child(5n) {
   background: #fff;
 }

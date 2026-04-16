@@ -3,20 +3,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-  background:
-    var(--paper-crease-x),
-    var(--paper-crease-y),
-    var(--paper-fold),
-    radial-gradient(ellipse at 25% 15%, var(--paper-inner-glow) 0%, transparent 50%),
-    linear-gradient(175deg, var(--paper-cream) 0%, var(--paper-warm) 50%, var(--beige-dusty) 100%);
+  background: var(--paper-rule-lines), var(--paper-cream);
   clip-path: var(--paper-tear-4);
   padding: var(--space-6);
-  filter: drop-shadow(0 16px 40px rgba(60, 40, 20, 0.20));
+  filter: drop-shadow(0 4px 16px rgba(200, 160, 180, 0.18));
+  border: 1px solid rgba(255, 210, 225, 0.35);
 }
 
 .heading {
   font-family: var(--font-display);
   font-size: 18px;
+  font-weight: 600;
   color: var(--color-text-dark);
 }
 
@@ -35,14 +32,14 @@
 .label {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-dark);
 }
 
 .fileInput {
-  background: var(--beige-dusty);
-  border: 1px dashed rgba(180, 140, 80, 0.35);
-  border-radius: 0;
+  background: var(--bg-lightest);
+  border: 1.5px dashed rgba(255, 197, 211, 0.50);
+  border-radius: var(--radius-md);
   padding: var(--space-3);
   cursor: pointer;
   font-size: 13px;
@@ -50,20 +47,21 @@
 }
 
 .fileInput::-webkit-file-upload-button {
-  background: var(--beige-vellum);
-  color: var(--gold-brass);
-  border: 1px solid rgba(180, 140, 80, 0.3);
-  border-radius: 0;
-  padding: 4px 10px;
+  background: var(--pastel-fairy);
+  color: var(--pink-medium);
+  border: 1.5px solid rgba(255, 197, 211, 0.40);
+  border-radius: var(--radius-sm);
+  padding: 5px 12px;
   font-family: var(--font-ui);
   font-size: 12px;
+  font-weight: 600;
   cursor: pointer;
   margin-right: 8px;
 }
 
 .fileName {
   font-size: 12px;
-  color: var(--color-text-paper-muted);
+  color: var(--color-text-muted);
   font-family: var(--font-ui);
 }
 
@@ -71,24 +69,23 @@
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: 0;
-  border: 1px solid rgba(180, 140, 80, 0.25);
+  border-radius: var(--radius-md);
+  border: 1.5px solid rgba(255, 197, 211, 0.30);
 }
 
 .progressWrapper {
   position: relative;
   height: 6px;
-  background: var(--beige-dusty);
-  border-radius: 0;
+  background: var(--pastel-cloud);
+  border-radius: var(--radius-sm);
   overflow: hidden;
 }
 
 .progressBar {
   position: absolute;
   left: 0; top: 0; bottom: 0;
-  background: var(--gold-shine);
-  background-size: 200% 100%;
-  border-radius: 0;
+  background: var(--pink-medium);
+  border-radius: var(--radius-sm);
   transition: width 0.2s ease;
 }
 
@@ -97,7 +94,7 @@
   right: 0;
   top: -18px;
   font-size: 11px;
-  color: var(--color-text-paper-muted);
+  color: var(--color-text-secondary);
   font-family: var(--font-ui);
 }
 
@@ -110,22 +107,22 @@
 .btn {
   font-family: var(--font-ui);
   font-size: 14px;
-  font-weight: 500;
-  color: var(--color-bg-deep);
-  background: var(--gold-shine);
-  background-size: 200% 100%;
+  font-weight: 600;
+  color: #fff;
+  background: var(--pink-medium);
   border: none;
-  border-radius: 0;
+  border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-8);
   cursor: pointer;
-  transition: opacity var(--transition-fast), box-shadow var(--transition-fast);
+  transition: opacity var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
   align-self: flex-start;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.18);
+  box-shadow: 0 3px 12px rgba(255, 157, 203, 0.20);
 }
 
 .btn:hover:not(:disabled) {
   opacity: 0.90;
-  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 157, 203, 0.28);
 }
 .btn:disabled { opacity: 0.5; cursor: not-allowed; }
 

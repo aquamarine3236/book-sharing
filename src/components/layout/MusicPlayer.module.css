@@ -9,11 +9,11 @@
   gap: var(--space-4);
   padding: 0 var(--space-6);
   background:
-    linear-gradient(0deg, rgba(14, 10, 6, 0.97) 0%, rgba(20, 14, 8, 0.94) 100%);
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(196, 154, 42, 0.18);
+    linear-gradient(0deg, rgba(255, 248, 250, 0.95) 0%, rgba(255, 244, 247, 0.90) 100%);
+  backdrop-filter: blur(18px);
+  border-top: 1.5px solid rgba(255, 197, 211, 0.30);
   z-index: 200;
-  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 -2px 16px rgba(255, 180, 210, 0.10);
 }
 
 .idle {
@@ -30,7 +30,7 @@
   height: 48px;
   border-radius: 100%;
   overflow: hidden;
-  border: 1px solid rgba(196, 154, 42, 0.15);
+  border: 2px solid rgba(255, 197, 211, 0.40);
 }
 
 .coverImg {
@@ -42,7 +42,7 @@
 .coverPlaceholder {
   width: 100%;
   height: 100%;
-  background: var(--color-bg-elevated);
+  background: var(--pastel-fairy);
 }
 
 .info {
@@ -57,8 +57,8 @@
 .title {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
-  color: var(--color-text-primary);
+  font-weight: 600;
+  color: var(--color-text-dark);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -76,7 +76,7 @@
 .divider {
   width: 1px;
   height: 32px;
-  background: rgba(196, 154, 42, 0.18);
+  background: rgba(255, 197, 211, 0.30);
   flex-shrink: 0;
 }
 
@@ -89,7 +89,7 @@
 
 .shuffleBtn {
   background: none;
-  border: 1px solid transparent;
+  border: 1.5px solid transparent;
   cursor: pointer;
   padding: 6px;
   border-radius: 100%;
@@ -105,15 +105,15 @@
 
 .shuffleBtn:hover {
   opacity: 0.75;
-  background: rgba(212, 168, 67, 0.06);
-  border-color: rgba(196, 154, 42, 0.20);
+  background: rgba(255, 157, 203, 0.08);
+  border-color: rgba(255, 197, 211, 0.35);
 }
 
 .shuffleBtn.shuffleActive {
   opacity: 1;
-  border-color: rgba(196, 154, 42, 0.35);
-  background: rgba(212, 168, 67, 0.10);
-  box-shadow: 0 0 8px rgba(255, 215, 0, 0.10);
+  border-color: rgba(255, 157, 203, 0.45);
+  background: rgba(255, 157, 203, 0.10);
+  box-shadow: 0 0 8px rgba(255, 157, 203, 0.12);
 }
 
 /* ── SVG icon inside shuffle/repeat toggle ── */
@@ -121,12 +121,12 @@
   width: 18px;
   height: 18px;
   display: block;
-  filter: brightness(0) invert(0.7);
+  filter: brightness(0) invert(0.5) sepia(1) saturate(0.5) hue-rotate(290deg);
   transition: filter var(--transition-fast);
 }
 
 .shuffleActive .modeIcon {
-  filter: brightness(0) invert(0.85) sepia(1) saturate(3) hue-rotate(15deg);
+  filter: brightness(0) invert(0.6) sepia(1) saturate(3) hue-rotate(290deg);
 }
 
 .navBtn {
@@ -139,7 +139,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 .navBtn:hover {
@@ -151,20 +151,20 @@
   width: 18px;
   height: 18px;
   display: block;
-  filter: brightness(0) invert(0.82) sepia(1) saturate(2) hue-rotate(15deg);
+  filter: brightness(0) invert(0.5) sepia(1) saturate(2) hue-rotate(290deg);
   transition: filter var(--transition-fast);
 }
 
 .navBtn:hover .navIcon {
-  filter: brightness(0) invert(0.9) sepia(1) saturate(4) hue-rotate(15deg);
+  filter: brightness(0) invert(0.6) sepia(1) saturate(4) hue-rotate(290deg);
 }
 
 .playBtn {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 100%;
-  border: 1.5px solid rgba(196, 154, 42, 0.35);
-  background: rgba(212, 168, 67, 0.06);
+  border: 2px solid rgba(255, 157, 203, 0.45);
+  background: rgba(255, 157, 203, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -173,9 +173,9 @@
 }
 
 .playBtn:hover {
-  background: rgba(212, 168, 67, 0.14);
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.12);
+  background: rgba(255, 157, 203, 0.18);
+  border-color: var(--pink-medium);
+  box-shadow: 0 0 14px rgba(255, 157, 203, 0.15);
 }
 
 /* Triangle play icon using CSS border trick */
@@ -185,7 +185,7 @@
   height: 0;
   border-top: 7px solid transparent;
   border-bottom: 7px solid transparent;
-  border-left: 12px solid var(--color-accent-gold);
+  border-left: 12px solid var(--pink-medium);
   margin-left: 2px;
 }
 
@@ -194,7 +194,8 @@
   display: block;
   width: 12px;
   height: 12px;
-  background: var(--color-accent-gold);
+  background: var(--pink-medium);
+  border-radius: 2px;
 }
 
 .progressWrapper {
@@ -214,8 +215,9 @@
 
 .progressBar::-webkit-slider-runnable-track {
   background: linear-gradient(to right,
-      var(--color-accent-gold) var(--progress, 0%),
-      var(--color-border) var(--progress, 0%)) !important;
+      var(--pink-medium) var(--progress, 0%),
+      var(--pastel-blush) var(--progress, 0%)) !important;
+  border-radius: 4px !important;
 }
 
 .times {
@@ -251,8 +253,9 @@
 
 .volumeBar::-webkit-slider-runnable-track {
   background: linear-gradient(to right,
-      var(--color-accent-gold-dim) var(--progress, 70%),
-      var(--color-border) var(--progress, 70%)) !important;
+      var(--pink-soft) var(--progress, 70%),
+      var(--pastel-blush) var(--progress, 70%)) !important;
+  border-radius: 4px !important;
 }
 
 @media (max-width: 768px) {
@@ -279,14 +282,14 @@
   }
 
   .playBtn {
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
   }
 
   .playIcon {
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-left: 10px solid var(--color-accent-gold);
+    border-left: 10px solid var(--pink-medium);
     margin-left: 2px;
   }
 

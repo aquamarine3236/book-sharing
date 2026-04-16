@@ -17,7 +17,7 @@
   font-family: var(--font-display);
   font-size: 36px;
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
   margin-bottom: var(--space-2);
 }
 
@@ -30,32 +30,31 @@
 .tabs {
   display: flex;
   gap: 2px;
-  border-bottom: 1px solid rgba(196, 154, 42, 0.22);
+  border-bottom: 1.5px solid rgba(255, 197, 211, 0.30);
   margin-bottom: var(--space-6);
 }
 
 .tab {
   font-family: var(--font-ui);
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--color-text-secondary);
   background: none;
   border: none;
   padding: var(--space-3) var(--space-5);
   cursor: pointer;
-  border-bottom: 2px solid transparent;
-  margin-bottom: -1px;
+  border-bottom: 2.5px solid transparent;
+  margin-bottom: -1.5px;
   transition: color var(--transition-fast), border-color var(--transition-fast);
 }
 
 .tab:hover {
-  color: var(--color-text-primary);
+  color: var(--color-text-dark);
 }
 
 .tab.activeTab {
-  color: var(--color-accent-gold);
-  border-bottom-color: var(--color-accent-gold);
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.10);
+  color: var(--pink-medium);
+  border-bottom-color: var(--pink-medium);
 }
 
 .loading,
@@ -76,11 +75,7 @@
 }
 
 .bookItem {
-  background:
-    var(--paper-crease-y),
-    var(--paper-fold),
-    radial-gradient(ellipse at 80% 20%, var(--paper-inner-glow) 0%, transparent 60%),
-    linear-gradient(170deg, var(--paper-warm) 0%, var(--paper-cream) 40%, var(--beige-dusty) 100%);
+  background: var(--paper-rule-lines), var(--paper-cream);
   clip-path: var(--paper-tear-1);
   padding: var(--space-4) var(--space-5);
   display: flex;
@@ -88,11 +83,12 @@
   justify-content: space-between;
   gap: var(--space-4);
   transition: filter var(--transition-fast);
-  filter: drop-shadow(0 4px 12px rgba(83, 56, 30, 0.12));
+  filter: drop-shadow(0 3px 10px rgba(200, 160, 180, 0.14));
+  border: 1px solid rgba(255, 210, 225, 0.30);
 }
 
 .bookItem:hover {
-  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.15));
+  filter: drop-shadow(0 6px 18px rgba(255, 157, 203, 0.18));
 }
 
 .bookInfo {
@@ -106,7 +102,7 @@
   font-family: var(--font-ui);
   font-size: 15px;
   font-weight: 700;
-  color: black;
+  color: var(--color-text-dark);
   text-decoration: none;
   white-space: nowrap;
   overflow: hidden;
@@ -114,7 +110,7 @@
 }
 
 .bookTitle:hover {
-  color: var(--wood-cedar);
+  color: var(--pink-medium);
 }
 
 .genreList {
@@ -126,9 +122,10 @@
 .bookGenre {
   font-family: var(--font-ui);
   font-size: 11px;
-  letter-spacing: 0.1em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   padding: 2px 8px;
-  border-radius: 0;
+  border-radius: var(--radius-sm);
   text-transform: uppercase;
 }
 
@@ -145,25 +142,25 @@
 .btnConfirmDelete {
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 500;
-  padding: 5px 12px;
-  border-radius: 0;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: opacity var(--transition-fast);
-  border: 1px solid transparent;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  border: 1.5px solid transparent;
 }
 
 .btnEdit {
-  color: var(--color-accent-gold);
-  border-color: rgba(196, 154, 42, 0.25);
-  background: rgba(212, 168, 67, 0.06);
+  color: var(--pink-medium);
+  border-color: rgba(255, 157, 203, 0.30);
+  background: rgba(255, 157, 203, 0.06);
 }
 
 .btnDelete,
 .btnConfirmDelete {
   color: var(--color-danger);
   border-color: var(--color-danger);
-  background: rgba(160, 64, 64, 0.06);
+  background: rgba(232, 138, 138, 0.06);
 }
 
 .btnConfirmDelete:disabled {
@@ -172,16 +169,15 @@
 }
 
 .btnSave {
-  color: var(--color-bg-deep);
-  background: var(--gold-shine);
-  background-size: 200% 100%;
+  color: #fff;
+  background: var(--pink-medium);
   border-color: transparent;
 }
 
 .btnCancel {
-  color: black;
-  border-color: black;
-  background: transparent;
+  color: var(--color-text-primary);
+  border-color: var(--color-border);
+  background: var(--bg-lightest);
 }
 
 .btnEdit:hover,
@@ -189,7 +185,8 @@
 .btnSave:hover,
 .btnCancel:hover,
 .btnConfirmDelete:hover:not(:disabled) {
-  opacity: 0.75;
+  opacity: 0.80;
+  transform: translateY(-1px);
 }
 
 /* Edit form */
@@ -215,9 +212,10 @@
 .genrePill {
   font-family: var(--font-ui);
   font-size: 12px;
+  font-weight: 600;
   padding: var(--space-2) var(--space-4);
-  border-radius: 0;
-  border: 1px solid rgba(180, 140, 80, 0.3);
+  border-radius: var(--radius-lg);
+  border: 1.5px solid rgba(255, 197, 211, 0.40);
   background: transparent;
   color: var(--color-text-dark);
   cursor: pointer;
@@ -225,58 +223,54 @@
 }
 
 .genrePill:hover {
-  border-color: rgba(212, 175, 55, 0.5);
-  background: rgba(212, 175, 55, 0.06);
+  border-color: var(--pink-medium);
+  background: rgba(255, 157, 203, 0.06);
 }
 
 .genrePill.active {
-  background: var(--silver-moonlight);
-  background-size: 200% 100%;
-  color: var(--color-bg-deep);
-  border-color: var(--color-accent-gold);
-  box-shadow: 0 1px 6px rgba(212, 175, 55, 0.15);
+  background: var(--pink-medium);
+  color: #fff;
+  border-color: var(--pink-medium);
+  box-shadow: 0 2px 10px rgba(255, 157, 203, 0.25);
 }
 
 /* Reviews */
 .reviewItem {
-  background:
-    var(--paper-crease-y),
-    var(--paper-fold),
-    radial-gradient(ellipse at 15% 30%, var(--paper-inner-glow) 0%, transparent 50%),
-    linear-gradient(170deg, var(--paper-warm) 0%, var(--paper-cream) 40%, var(--beige-dusty) 100%);
+  background: var(--paper-rule-lines), var(--paper-cream);
   clip-path: var(--paper-tear-3);
   padding: var(--space-5);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  filter: drop-shadow(0 4px 12px rgba(83, 56, 30, 0.12));
+  filter: drop-shadow(0 3px 10px rgba(200, 160, 180, 0.14));
+  border: 1px solid rgba(255, 210, 225, 0.30);
 }
 
 .reviewBookTitle {
   font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 700;
-  color: black;
+  font-weight: 600;
+  color: var(--color-text-dark);
   text-decoration: none;
 }
 
 .reviewBookTitle:hover {
-  color: var(--wood-cedar);
+  color: var(--pink-medium);
 }
 
 .reviewComment {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
-  color: var(--shadow-strong);
+  color: var(--color-text-primary);
 }
 
 /* Modal */
 .modalOverlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 240, 245, 0.70);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -285,30 +279,27 @@
 }
 
 .modal {
-  background:
-    var(--paper-crease-x),
-    var(--paper-fold),
-    radial-gradient(ellipse at 30% 20%, var(--paper-inner-glow) 0%, transparent 60%),
-    linear-gradient(170deg, var(--paper-cream) 0%, var(--paper-warm) 40%, var(--beige-dusty) 100%);
+  background: var(--paper-rule-lines), var(--paper-cream);
   clip-path: var(--paper-tear-2);
   padding: var(--space-8);
   max-width: 420px;
   width: 100%;
   animation: fade-in-up 0.25s ease both;
-  filter: drop-shadow(0 8px 32px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 4px 20px rgba(200, 160, 180, 0.22));
+  border: 1px solid rgba(255, 210, 225, 0.35);
 }
 
 .modalTitle {
   font-family: var(--font-display);
   font-size: 20px;
-  color: black;
+  color: var(--color-text-dark);
   margin-bottom: var(--space-4);
 }
 
 .modalText {
   font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--shadow-strong);
+  font-size: 15px;
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin-bottom: var(--space-6);
 }

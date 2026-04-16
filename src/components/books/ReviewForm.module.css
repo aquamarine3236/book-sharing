@@ -3,21 +3,17 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-  background:
-    var(--paper-crease-x),
-    var(--paper-crease-y),
-    var(--paper-fold),
-    radial-gradient(ellipse at 30% 20%, var(--paper-inner-glow) 0%, transparent 50%),
-    linear-gradient(170deg, var(--paper-cream) 0%, var(--paper-warm) 50%, var(--beige-dusty) 100%);
+  background: var(--paper-rule-lines), var(--paper-cream);
   clip-path: var(--paper-tear-4);
   padding: var(--space-6);
-  filter: drop-shadow(0 6px 16px rgba(83, 56, 30, 0.15));
+  filter: drop-shadow(0 3px 12px rgba(200, 160, 180, 0.16));
+  border: 1px solid rgba(255, 210, 225, 0.30);
 }
 
 .heading {
   font-family: var(--font-display);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--color-text-dark);
 }
 
@@ -30,14 +26,14 @@
 .label {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
-  color: var(--wood-oak);
-  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.03em;
 }
 
 .textarea {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -50,23 +46,22 @@
 .btn {
   font-family: var(--font-ui);
   font-size: 14px;
-  font-weight: 500;
-  color: var(--color-bg-deep);
-  background: var(--gold-shine);
-  background-size: 200% 100%;
+  font-weight: 600;
+  color: #fff;
+  background: var(--pink-medium);
   border: none;
-  border-radius: 0;
+  border-radius: var(--radius-md);
   padding: var(--space-3) var(--space-6);
   cursor: pointer;
   transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
   align-self: flex-start;
-  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 3px 12px rgba(255, 157, 203, 0.20);
 }
 
 .btn:hover:not(:disabled) {
   opacity: 0.90;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.22);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 157, 203, 0.28);
 }
 
 .btn:disabled {

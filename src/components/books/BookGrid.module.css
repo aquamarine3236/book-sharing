@@ -13,7 +13,7 @@
 .empty {
   text-align: center;
   padding: var(--space-16) var(--space-8);
-  color: var(--color-text-secondary);
+  color: var(--color-text-muted);
   font-family: var(--font-body);
   font-size: 17px;
   font-style: italic;

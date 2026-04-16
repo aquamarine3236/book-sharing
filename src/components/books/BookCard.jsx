@@ -39,7 +39,7 @@ export default function BookCard({ book, index }) {
             <span 
               key={gName} 
               className={styles.genre}
-              style={{ color: 'var(--color-text-primary)', backgroundColor: getGenreColor(gName), boxShadow: '0 2px 8px rgba(0,0,0,0.2)' }}
+              style={{ color: '#fff', backgroundColor: getGenreColor(gName), boxShadow: '0 2px 8px rgba(255,180,210,0.20)' }}
             >
               {gName}
             </span>

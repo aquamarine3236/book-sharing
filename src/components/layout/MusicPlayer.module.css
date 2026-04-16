@@ -87,20 +87,76 @@
   flex-shrink: 0;
 }
 
+.shuffleBtn {
+  background: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 100%;
+  transition: border-color var(--transition-fast), background var(--transition-fast),
+              box-shadow var(--transition-fast), opacity var(--transition-fast);
+  line-height: 1;
+  opacity: 0.45;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shuffleBtn:hover {
+  opacity: 0.75;
+  background: rgba(212, 168, 67, 0.06);
+  border-color: rgba(196, 154, 42, 0.20);
+}
+
+.shuffleBtn.shuffleActive {
+  opacity: 1;
+  border-color: rgba(196, 154, 42, 0.35);
+  background: rgba(212, 168, 67, 0.10);
+  box-shadow: 0 0 8px rgba(255, 215, 0, 0.10);
+}
+
+/* ── SVG icon inside shuffle/repeat toggle ── */
+.modeIcon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: brightness(0) invert(0.7);
+  transition: filter var(--transition-fast);
+}
+
+.shuffleActive .modeIcon {
+  filter: brightness(0) invert(0.85) sepia(1) saturate(3) hue-rotate(15deg);
+}
+
 .navBtn {
-  font-size: 18px;
-  color: var(--color-text-secondary);
   background: none;
   border: none;
   cursor: pointer;
   padding: var(--space-1) var(--space-2);
-  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+  transition: opacity var(--transition-fast);
   line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
 }
 
 .navBtn:hover {
-  color: var(--color-accent-gold);
-  text-shadow: 0 0 8px rgba(255, 215, 0, 0.15);
+  opacity: 1;
+}
+
+/* ── SVG icon inside prev/next buttons ── */
+.navIcon {
+  width: 18px;
+  height: 18px;
+  display: block;
+  filter: brightness(0) invert(0.82) sepia(1) saturate(2) hue-rotate(15deg);
+  transition: filter var(--transition-fast);
+}
+
+.navBtn:hover .navIcon {
+  filter: brightness(0) invert(0.9) sepia(1) saturate(4) hue-rotate(15deg);
 }
 
 .playBtn {
@@ -240,8 +296,20 @@
   }
 
   .navBtn {
-    font-size: 16px;
     padding: var(--space-1);
+  }
+
+  .navIcon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .shuffleBtn {
+    position: absolute;
+    right: var(--space-3);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
   }
 
   .divider {

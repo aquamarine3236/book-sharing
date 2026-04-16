@@ -12,6 +12,7 @@ export default function MusicPlayer() {
   const {
     currentTrack, isPlaying,
     currentTime, duration, volume,
+    shuffleMode, toggleShuffleMode,
     toggle, next, prev, seek, changeVolume,
   } = useMusic();
 
@@ -45,14 +46,18 @@ export default function MusicPlayer() {
 
       {/* Controls */}
       <div className={styles.controls}>
-        <button className={styles.navBtn} onClick={prev} title="Bài trước">&#171;</button>
+        <button className={styles.navBtn} onClick={prev} title="Bài trước">
+          <img src="/play_back.svg" alt="Previous" className={styles.navIcon} />
+        </button>
         <button className={styles.playBtn} onClick={toggle} title={isPlaying ? 'Tạm dừng' : 'Phát'}>
           {isPlaying
             ? <span className={styles.stopIcon} />
             : <span className={styles.playIcon} />
           }
         </button>
-        <button className={styles.navBtn} onClick={next} title="Bài tiếp">&#187;</button>
+        <button className={styles.navBtn} onClick={next} title="Bài tiếp">
+          <img src="/play_next.svg" alt="Next" className={styles.navIcon} />
+        </button>
       </div>
 
       <div className={styles.divider} />
@@ -91,6 +96,19 @@ export default function MusicPlayer() {
           style={{ '--progress': `${volume * 100}%` }}
         />
       </div>
+
+      {/* Shuffle / Sequential toggle */}
+      <button
+        className={`${styles.shuffleBtn} ${shuffleMode ? styles.shuffleActive : ''}`}
+        onClick={toggleShuffleMode}
+        title={shuffleMode ? 'Đang phát ngẫu nhiên — nhấn để phát theo thứ tự' : 'Đang phát theo thứ tự — nhấn để phát ngẫu nhiên'}
+      >
+        <img
+          src={shuffleMode ? '/shuffle.svg' : '/repeat.svg'}
+          alt={shuffleMode ? 'Shuffle' : 'Sequential'}
+          className={styles.modeIcon}
+        />
+      </button>
     </div>
   );
 }

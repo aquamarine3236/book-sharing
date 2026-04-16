@@ -7,7 +7,7 @@ import { useMusic } from '../../contexts/MusicContext';
 import styles from './AppLayout.module.css';
 
 export default function AppLayout() {
-  const { setPlaylist, play, playlist } = useMusic();
+  const { setPlaylist, play, playlist, shuffleMode } = useMusic();
 
   useEffect(() => {
     const initMusic = async () => {
@@ -20,7 +20,11 @@ export default function AppLayout() {
         
       if (data && data.length > 0) {
         setPlaylist(data);
-        play(0);
+        // Start at a random track when in shuffle mode, otherwise start at 0
+        const startIndex = shuffleMode
+          ? Math.floor(Math.random() * data.length)
+          : 0;
+        play(startIndex);
       }
     };
     initMusic();

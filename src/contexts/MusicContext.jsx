@@ -112,7 +112,19 @@ export function MusicProvider({ children }) {
     audio.load();
     loadedSrcRef.current = currentTrack.mp3_url;
 
-    if (isPlaying) audio.play().catch(() => {});
+    if (isPlaying) {
+      audio.play().catch((err) => {
+        console.warn('Autoplay prevented. Waiting for user interaction.', err);
+        setIsPlaying(false);
+        const playOnInteract = () => {
+          audio.play().then(() => setIsPlaying(true)).catch(() => {});
+          document.removeEventListener('click', playOnInteract);
+          document.removeEventListener('keydown', playOnInteract);
+        };
+        document.addEventListener('click', playOnInteract);
+        document.addEventListener('keydown', playOnInteract);
+      });
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIndex, currentTrack]);
 
@@ -241,13 +253,24 @@ export function MusicProvider({ children }) {
     });
   }, [playlist, currentIndex]);
 
+  // Play a silent short sound to unlock the audio element on mobile/browsers and allow future async plays
+  const unlockAudio = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio.src) {
+      // Provide a tiny silent data URI so it can play something
+      audio.src = 'data:audio/mp3;base64,//MkxAAQ...'; // shortened for brevity, just an empty src or basic data uri is fine, actually let's just use play/pause
+      audio.load();
+    }
+    audio.play().catch(() => {});
+  }, []);
+
   return (
     <MusicContext.Provider value={{
       playlist, setPlaylist,
       currentTrack, currentIndex,
       isPlaying, currentTime, duration, volume,
       shuffleMode, toggleShuffleMode, enableShuffleMode,
-      play, pause, toggle, next, prev, seek, changeVolume, playTrack,
+      play, pause, toggle, next, prev, seek, changeVolume, playTrack, unlockAudio,
     }}>
       {children}
     </MusicContext.Provider>

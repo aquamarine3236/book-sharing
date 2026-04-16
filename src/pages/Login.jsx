@@ -7,7 +7,7 @@ import styles from './Login.module.css';
 
 export default function Login() {
   const { login }  = useAuth();
-  const { enableShuffleMode, playlist, play } = useMusic();
+  const { enableShuffleMode, playlist, play, unlockAudio } = useMusic();
   const navigate   = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +18,10 @@ export default function Login() {
     e.preventDefault();
     setError('');
     setLoading(true);
+    
+    // Unlock the audio context synchronously during logic click gesture
+    if (unlockAudio) unlockAudio();
+
     try {
       await login(username.trim(), password);
       

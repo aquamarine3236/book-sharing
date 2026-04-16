@@ -1,168 +1,174 @@
 :root {
-  /* ================= PINK PRIMARY (Cute / Warm / Playful) ================= */
-  --pink-soft: #FFC5D3;
-  --pink-medium: #FF9DCB;
-  --pink-vivid: #FF86E0;
-  --pink-blush: #FFB8D4;
-  --pink-rose: #F2A0C0;
-  --pink-hot: #FF6BB5;
-  --pink-glow: rgba(255, 157, 203, 0.35);
-  --pink-shine: linear-gradient(135deg, #FFC5D3 0%, #FF9DCB 40%, #FF86E0 60%, #FFD1E8 100%);
-  --pink-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 157, 203, 0.18) 50%, transparent 100%);
+    /* ================= PINK PRIMARY (Cute / Warm / Playful) ================= */
+    --pink-soft: #FFC5D3;
+    --pink-medium: #FF9DCB;
+    --pink-vivid: #FF86E0;
+    --pink-blush: #FFB8D4;
+    --pink-rose: #F2A0C0;
+    --pink-hot: #FF6BB5;
+    --pink-glow: rgba(255, 157, 203, 0.35);
+    --pink-shine: linear-gradient(135deg, #FFC5D3 0%, #FF9DCB 40%, #FF86E0 60%, #FFD1E8 100%);
+    --pink-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 157, 203, 0.18) 50%, transparent 100%);
 
-  /* ================= SECONDARY PINK (Soft / Dreamy / Pastel) ================= */
-  --pastel-blush: #FFD1E8;
-  --pastel-rose: #F9D7E3;
-  --pastel-fairy: #FDE4F2;
-  --pastel-lavender: #F0E0FF;
-  --pastel-cloud: #FFF0F5;
-  --pastel-mist: rgba(255, 209, 232, 0.25);
+    /* ================= SECONDARY PINK (Soft / Dreamy / Pastel) ================= */
+    --pastel-blush: #FFD1E8;
+    --pastel-rose: #F9D7E3;
+    --pastel-fairy: #FDE4F2;
+    --pastel-lavender: #F0E0FF;
+    --pastel-cloud: #FFF0F5;
+    --pastel-mist: rgba(255, 209, 232, 0.25);
 
-  /* ================= BACKGROUNDS (Light / Airy / Warm) ================= */
-  --bg-lightest: #FFFFFF;
-  --bg-cream: #FFF4F7;
-  --bg-lavender: #F7F7FF;
-  --bg-blush: #FFF8FA;
-  --bg-warm: #FFFBFD;
-  --bg-card: #FFF0F5;
+    /* ================= BACKGROUNDS (Light / Airy / Warm) ================= */
+    --bg-lightest: #FFFFFF;
+    --bg-cream: #FFF4F7;
+    --bg-lavender: #F7F7FF;
+    --bg-blush: #FFF8FA;
+    --bg-warm: #FFFBFD;
+    --bg-card: #FFF0F5;
 
-  /* --- BOOKS GENRES (Refined Pastel Palette) --- */
+    /* ================= TACTILE PAPER COLORS ================= */
+    --paper-cream: #faf8f6;
+    --paper-warm: #FFF0F5;
+    --paper-rose: #f9f7f4;
+    --paper-pink: #F9D7E3;
 
-  /* RED GROUP */
-  --color-lich-su: #FF8A8A;
-  /* Soft Red */
-  --color-triet-hoc: #F4A460;
-  /* Sandy Orange-Red */
-  --color-kinh-te: #E9967A;
-  /* Muted Coral */
+    /* --- BOOKS GENRES (Refined Pastel Palette) --- */
 
-  /* BLUE GROUP */
-  --color-khoa-hoc: #8BB8E8;
-  /* Sky Blue */
-  --color-trinh-tham: #94A3B8;
-  /* Steel Blue */
-  --color-van-hoc: #A5B4FC;
-  /* Periwinkle */
+    /* RED GROUP */
+    --color-lich-su: #FF8A8A;
+    /* Soft Red */
+    --color-triet-hoc: #F4A460;
+    /* Sandy Orange-Red */
+    --color-kinh-te: #E9967A;
+    /* Muted Coral */
 
-  /* GREEN GROUP */
-  --color-phat-trien: #80D9A0;
-  /* Mint */
-  --color-truyen-tranh: #7DD3C0;
-  /* Sage/Teal */
-  --color-gia-tuong: #B4E4C4;
-  /* Seafoam Green */
+    /* BLUE GROUP */
+    --color-khoa-hoc: #8BB8E8;
+    /* Sky Blue */
+    --color-trinh-tham: #94A3B8;
+    /* Steel Blue */
+    --color-van-hoc: #A5B4FC;
+    /* Periwinkle */
 
-  /* YELLOW GROUP */
-  --color-hai-huoc: #FDE047;
-  /* Pastel Lemon */
-  --color-tam-ly: #FB923C;
-  /* Soft Orange */
-  --color-khac: #FCD34D;
-  /* Amber Gold */
+    /* GREEN GROUP */
+    --color-phat-trien: #80D9A0;
+    /* Mint */
+    --color-truyen-tranh: #7DD3C0;
+    /* Sage/Teal */
+    --color-gia-tuong: #B4E4C4;
+    /* Seafoam Green */
 
-  /* ================= STATE ================= */
-  --hover-light: rgba(255, 157, 203, 0.10);
-  --hover-dark: rgba(109, 90, 90, 0.08);
-  --shadow-soft: rgba(200, 160, 180, 0.18);
-  --shadow-strong: rgba(109, 90, 90, 0.50);
+    /* YELLOW GROUP */
+    --color-hai-huoc: #FDE047;
+    /* Pastel Lemon */
+    --color-tam-ly: #FB923C;
+    /* Soft Orange */
+    --color-khac: #FCD34D;
+    /* Amber Gold */
 
-  /* ================= WARM LIGHTING (Pink-toned) ================= */
-  --warm-light: rgba(255, 200, 220, 0.06);
-  --warm-ambient: rgba(255, 180, 210, 0.08);
-  --candle-glow: rgba(255, 190, 210, 0.06);
-  --lantern-haze: radial-gradient(ellipse at 50% 0%, rgba(255, 200, 230, 0.08) 0%, transparent 65%);
+    /* ================= STATE ================= */
+    --hover-light: rgba(255, 157, 203, 0.10);
+    --hover-dark: rgba(109, 90, 90, 0.08);
+    --shadow-soft: rgba(200, 160, 180, 0.18);
+    --shadow-strong: rgba(109, 90, 90, 0.50);
 
-  /* ================= SEMANTIC MAPPING ================= */
-  --color-text-primary: #6D5A5A;
-  --color-text-secondary: #8B7575;
-  --color-text-muted: #B0999C;
-  --color-text-dark: #4A3C3C;
-  --color-text-paper-muted: #9E8585;
+    /* ================= WARM LIGHTING (Pink-toned) ================= */
+    --warm-light: rgba(255, 200, 220, 0.06);
+    --warm-ambient: rgba(255, 180, 210, 0.08);
+    --candle-glow: rgba(255, 190, 210, 0.06);
+    --lantern-haze: radial-gradient(ellipse at 50% 0%, rgba(255, 200, 230, 0.08) 0%, transparent 65%);
 
-  --color-bg-main: var(--bg-cream);
-  --color-bg-card: var(--bg-card);
-  --color-bg-deep: var(--bg-lightest);
-  --color-bg-surface: var(--bg-blush);
-  --color-bg-elevated: var(--pastel-fairy);
-  --color-bg-paper: var(--paper-warm);
-  --color-bg-paper-dark: var(--paper-rose);
-  --color-bg-paper-cream: var(--paper-cream);
+    /* ================= SEMANTIC MAPPING ================= */
+    --color-text-primary: #6D5A5A;
+    --color-text-secondary: #8B7575;
+    --color-text-muted: #B0999C;
+    --color-text-dark: #4A3C3C;
+    --color-text-paper-muted: #9E8585;
 
-  --color-border: var(--pink-soft);
-  --color-border-subtle: var(--pastel-blush);
-  --color-border-glow: var(--pink-medium);
-  --color-border-silver: var(--pastel-rose);
+    --color-bg-main: var(--bg-cream);
+    --color-bg-card: var(--bg-card);
+    --color-bg-deep: var(--bg-lightest);
+    --color-bg-surface: var(--bg-blush);
+    --color-bg-elevated: var(--pastel-fairy);
+    --color-bg-paper: var(--paper-warm);
+    --color-bg-paper-dark: var(--paper-rose);
+    --color-bg-paper-cream: var(--paper-cream);
 
-  --color-accent-primary: var(--pink-medium);
-  --color-accent-danger: #E88A8A;
+    --color-border: var(--pink-soft);
+    --color-border-subtle: var(--pastel-blush);
+    --color-border-glow: var(--pink-medium);
+    --color-border-silver: var(--pastel-rose);
 
-  --color-accent-gold: var(--pink-medium);
-  --color-accent-gold-dim: var(--pink-soft);
+    --color-accent-primary: var(--pink-medium);
+    --color-accent-danger: #E88A8A;
 
-  --color-accent-silver: var(--pastel-rose);
-  --color-accent-silver-dim: var(--pastel-blush);
+    --color-accent-gold: var(--pink-medium);
+    --color-accent-gold-dim: var(--pink-soft);
 
-  --color-accent-purple: var(--pastel-lavender);
-  --color-accent-purple-dim: rgba(240, 224, 255, 0.4);
+    --color-accent-silver: var(--pastel-rose);
+    --color-accent-silver-dim: var(--pastel-blush);
 
-  --color-accent-blue: var(--mint-fresh);
+    --color-accent-purple: var(--pastel-lavender);
+    --color-accent-purple-dim: rgba(240, 224, 255, 0.4);
 
-  --color-star-filled: #FFB3C6;
-  --color-star-empty: #E8D8DD;
+    --color-accent-blue: var(--mint-fresh);
 
-  --color-danger: #E88A8A;
+    --color-star-filled: #FFB3C6;
+    --color-star-empty: #E8D8DD;
 
-  /* Typography */
-  --font-display: 'Baloo 2', sans-serif;
-  --font-body: 'Quicksand', sans-serif;
-  --font-ui: 'Nunito', sans-serif;
+    --color-danger: #E88A8A;
 
-  /* Spacing */
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-3: 12px;
-  --space-4: 16px;
-  --space-5: 20px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
+    /* Typography */
+    --font-display: 'Baloo 2', sans-serif;
+    --font-body: 'Quicksand', sans-serif;
+    --font-ui: 'Nunito', sans-serif;
 
-  /* Border radius — rounded, cute, friendly */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
 
-  /* Transitions */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.3s ease;
-  --transition-slow: 0.5s ease;
+    /* Border radius — rounded, cute, friendly */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
 
-  /* Music player height */
-  --player-height: 72px;
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
 
-  /* ================= VISUAL TACTILE PAPER & SCRAPBOOK EFFECTS ================= */
-  --paper-rule-lines: repeating-linear-gradient(180deg, transparent, transparent 27px, rgba(255, 157, 203, 0.18) 27px, rgba(255, 157, 203, 0.18) 28px);
-  --paper-fold: linear-gradient(180deg, transparent 48%, rgba(200, 150, 170, 0.03) 49%, rgba(255, 255, 255, 0.06) 50%, rgba(200, 150, 170, 0.03) 51%, transparent 52%);
-  --paper-crease-x: linear-gradient(90deg, transparent 35%, rgba(200, 150, 170, 0.03) 36%, rgba(255, 255, 255, 0.06) 37%, transparent 38%);
-  --paper-crease-y: linear-gradient(180deg, transparent 75%, rgba(200, 150, 170, 0.02) 76%, rgba(255, 255, 255, 0.05) 77%, transparent 78%);
+    /* Music player height */
+    --player-height: 72px;
 
-  /* Complex polygon clip-paths simulating torn edges and cut corners */
-  --paper-tear-1: polygon(1% 1%, 4% 0%, 15% 1%, 20% 0%, 40% 1%, 85% 0%, 96% 1%, 99% 3%,
-      100% 10%, 99% 25%, 100% 40%, 99% 80%, 100% 95%, 97% 99%, 80% 100%, 75% 99%, 40% 100%,
-      20% 99%, 10% 100%, 2% 98%, 0% 90%, 1% 70%, 0% 30%, 1% 15%);
-  --paper-tear-2: polygon(0% 4%, 2% 1%, 10% 0%, 12% 2%, 30% 0%, 70% 1%, 90% 0%, 98% 2%, 100% 5%,
-      99% 15%, 100% 30%, 98% 70%, 100% 85%, 98% 98%, 85% 100%, 70% 98%, 40% 100%,
-      15% 99%, 5% 100%, 1% 95%, 0% 80%, 1% 50%, 0% 20%);
-  --paper-tear-3: polygon(2% 0%, 10% 1%, 25% 0%, 50% 1%, 80% 0%, 95% 1%, 100% 4%,
-      98% 20%, 100% 45%, 99% 60%, 100% 90%, 96% 100%, 80% 99%, 60% 100%, 30% 98%,
-      10% 100%, 0% 96%, 1% 75%, 0% 40%, 1% 10%);
-  --paper-tear-4: polygon(1% 2%, 15% 0%, 30% 1%, 50% 0%, 75% 1%, 98% 0%, 100% 6%,
-      99% 30%, 100% 60%, 98% 85%, 100% 98%, 70% 100%, 50% 99%, 20% 100%,
-      2% 99%, 0% 80%, 1% 50%, 0% 20%);
-  --paper-tear-5: polygon(0% 5%, 5% 1%, 15% 0%, 25% 1%, 60% 0%, 85% 1%, 95% 0%, 99% 5%,
-      100% 20%, 99% 40%, 100% 70%, 98% 90%, 100% 96%, 95% 99%, 80% 100%, 50% 99%, 30% 100%,
-      10% 99%, 0% 94%, 1% 80%, 0% 50%, 1% 25%);
+    /* ================= VISUAL TACTILE PAPER & SCRAPBOOK EFFECTS ================= */
+    --paper-rule-lines: repeating-linear-gradient(180deg, transparent, transparent 27px, rgba(255, 157, 203, 0.18) 27px, rgba(255, 157, 203, 0.18) 28px);
+    --paper-fold: linear-gradient(180deg, transparent 48%, rgba(200, 150, 170, 0.03) 49%, rgba(255, 255, 255, 0.06) 50%, rgba(200, 150, 170, 0.03) 51%, transparent 52%);
+    --paper-crease-x: linear-gradient(90deg, transparent 35%, rgba(200, 150, 170, 0.03) 36%, rgba(255, 255, 255, 0.06) 37%, transparent 38%);
+    --paper-crease-y: linear-gradient(180deg, transparent 75%, rgba(200, 150, 170, 0.02) 76%, rgba(255, 255, 255, 0.05) 77%, transparent 78%);
+
+    /* Complex polygon clip-paths simulating torn edges and cut corners */
+    --paper-tear-1: polygon(1% 1%, 4% 0%, 15% 1%, 20% 0%, 40% 1%, 85% 0%, 96% 1%, 99% 3%,
+            100% 10%, 99% 25%, 100% 40%, 99% 80%, 100% 95%, 97% 99%, 80% 100%, 75% 99%, 40% 100%,
+            20% 99%, 10% 100%, 2% 98%, 0% 90%, 1% 70%, 0% 30%, 1% 15%);
+    --paper-tear-2: polygon(0% 4%, 2% 1%, 10% 0%, 12% 2%, 30% 0%, 70% 1%, 90% 0%, 98% 2%, 100% 5%,
+            99% 15%, 100% 30%, 98% 70%, 100% 85%, 98% 98%, 85% 100%, 70% 98%, 40% 100%,
+            15% 99%, 5% 100%, 1% 95%, 0% 80%, 1% 50%, 0% 20%);
+    --paper-tear-3: polygon(2% 0%, 10% 1%, 25% 0%, 50% 1%, 80% 0%, 95% 1%, 100% 4%,
+            98% 20%, 100% 45%, 99% 60%, 100% 90%, 96% 100%, 80% 99%, 60% 100%, 30% 98%,
+            10% 100%, 0% 96%, 1% 75%, 0% 40%, 1% 10%);
+    --paper-tear-4: polygon(1% 2%, 15% 0%, 30% 1%, 50% 0%, 75% 1%, 98% 0%, 100% 6%,
+            99% 30%, 100% 60%, 98% 85%, 100% 98%, 70% 100%, 50% 99%, 20% 100%,
+            2% 99%, 0% 80%, 1% 50%, 0% 20%);
+    --paper-tear-5: polygon(0% 5%, 5% 1%, 15% 0%, 25% 1%, 60% 0%, 85% 1%, 95% 0%, 99% 5%,
+            100% 20%, 99% 40%, 100% 70%, 98% 90%, 100% 96%, 95% 99%, 80% 100%, 50% 99%, 30% 100%,
+            10% 99%, 0% 94%, 1% 80%, 0% 50%, 1% 25%);
 }

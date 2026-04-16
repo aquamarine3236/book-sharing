@@ -108,6 +108,7 @@ export default function MusicPlayer() {
           alt={shuffleMode ? 'Shuffle' : 'Sequential'}
           className={styles.modeIcon}
         />
+        <span className={styles.shuffleText}>{shuffleMode ? 'Ngẫu nhiên' : 'Thứ tự'}</span>
       </button>
     </div>
   );

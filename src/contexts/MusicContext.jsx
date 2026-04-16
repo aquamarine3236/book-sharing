@@ -225,12 +225,28 @@ export function MusicProvider({ children }) {
     });
   }, [playlist, currentIndex]);
 
+  const enableShuffleMode = useCallback(() => {
+    setShuffleMode((prev) => {
+      if (prev) return prev; // already enabled
+      if (playlist.length > 0) {
+        const order = buildShuffleOrder(playlist.length, currentIndex);
+        const pos = order.indexOf(currentIndex);
+        if (pos > 0) {
+          [order[0], order[pos]] = [order[pos], order[0]];
+        }
+        setShuffleOrder(order);
+        setShuffleCursor(0);
+      }
+      return true;
+    });
+  }, [playlist, currentIndex]);
+
   return (
     <MusicContext.Provider value={{
       playlist, setPlaylist,
       currentTrack, currentIndex,
       isPlaying, currentTime, duration, volume,
-      shuffleMode, toggleShuffleMode,
+      shuffleMode, toggleShuffleMode, enableShuffleMode,
       play, pause, toggle, next, prev, seek, changeVolume, playTrack,
     }}>
       {children}

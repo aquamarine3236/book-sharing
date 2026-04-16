@@ -88,32 +88,39 @@
 }
 
 .shuffleBtn {
-  background: none;
-  border: 1.5px solid transparent;
+  background: rgba(255, 157, 203, 0.08);
+  border: 1.5px solid rgba(255, 197, 211, 0.3);
   cursor: pointer;
-  padding: 6px;
-  border-radius: 100%;
-  transition: border-color var(--transition-fast), background var(--transition-fast),
-              box-shadow var(--transition-fast), opacity var(--transition-fast);
+  padding: 6px 12px;
+  border-radius: 20px;
+  transition: all var(--transition-fast);
   line-height: 1;
-  opacity: 0.45;
+  opacity: 0.8;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
 }
 
 .shuffleBtn:hover {
-  opacity: 0.75;
-  background: rgba(255, 157, 203, 0.08);
-  border-color: rgba(255, 197, 211, 0.35);
+  opacity: 1;
+  background: rgba(255, 157, 203, 0.15);
+  border-color: rgba(255, 197, 211, 0.5);
 }
 
 .shuffleBtn.shuffleActive {
   opacity: 1;
-  border-color: rgba(255, 157, 203, 0.45);
-  background: rgba(255, 157, 203, 0.10);
-  box-shadow: 0 0 8px rgba(255, 157, 203, 0.12);
+  border-color: var(--pink-medium);
+  background: rgba(255, 157, 203, 0.2);
+  box-shadow: 0 0 10px rgba(255, 157, 203, 0.15);
+}
+
+.shuffleText {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--pink-dark);
 }
 
 /* ── SVG icon inside shuffle/repeat toggle ── */
@@ -312,7 +319,12 @@
     right: var(--space-3);
     top: 50%;
     transform: translateY(-50%);
-    padding: 5px;
+    padding: 6px;
+    border-radius: 100%;
+  }
+
+  .shuffleText {
+    display: none;
   }
 
   .divider {

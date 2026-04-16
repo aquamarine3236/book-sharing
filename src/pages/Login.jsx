@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import { useMusic } from '../contexts/MusicContext';
 import ParticleBackground from '../components/ui/ParticleBackground';
 import styles from './Login.module.css';
 
 export default function Login() {
   const { login }  = useAuth();
+  const { enableShuffleMode, playlist, play } = useMusic();
   const navigate   = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +20,13 @@ export default function Login() {
     setLoading(true);
     try {
       await login(username.trim(), password);
+      
+      enableShuffleMode();
+      if (playlist && playlist.length > 0) {
+        const randIdx = Math.floor(Math.random() * playlist.length);
+        play(randIdx);
+      }
+
       navigate('/');
     } catch (err) {
       setError(mapError(err));

@@ -52,6 +52,8 @@ export function MusicProvider({ children }) {
 
   const currentTrack = playlist[currentIndex] || null;
 
+  const nextRef = useRef();
+
   /* Persist shuffle preference */
   useEffect(() => {
     localStorage.setItem('music_shuffle_mode', String(shuffleMode));
@@ -80,7 +82,9 @@ export function MusicProvider({ children }) {
     const audio = audioRef.current;
     const onTimeUpdate  = () => setCurrentTime(audio.currentTime);
     const onDuration    = () => setDuration(audio.duration || 0);
-    const onEnded       = () => next();
+    const onEnded       = () => {
+      if (nextRef.current) nextRef.current();
+    };
     const onPlay        = () => setIsPlaying(true);
     const onPause       = () => setIsPlaying(false);
 
@@ -170,6 +174,8 @@ export function MusicProvider({ children }) {
     setIsPlaying(true);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playlist, shuffleMode, shuffleOrder]);
+
+  nextRef.current = next;
 
   const prev = useCallback(() => {
     if (!playlist.length) return;
